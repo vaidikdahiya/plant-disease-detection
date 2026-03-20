@@ -1,0 +1,11 @@
+This directory will contain the trained model after running:
+
+    python scripts/train_model.py --data_dir /path/to/PlantVillage
+
+Files generated:
+  - plant_disease_model.h5      (trained Keras model)
+  - class_indices.json          (class label mapping)
+  - training_history.json       (loss/accuracy curves)
+  - training_plots.png          (training visualization)
+  - confusion_matrix.png        (evaluation results)
+  - evaluation_report.json      (per-class metrics)

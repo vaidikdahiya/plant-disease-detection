@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Plant Disease Detection System</title>
+    <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">PlantMD</span>
+            </div>
+            <nav>
+                <a href="#" class="nav-link active">Detect</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1 class="hero-title">Plant Disease Detection</h1>
+        <p class="hero-sub">Upload a leaf image and get instant AI-powered disease diagnosis with treatment recommendations.</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="card upload-card">
+            <div class="upload-zone" id="uploadZone">
+                <div class="upload-icon">📷</div>
+                <p class="upload-title">Drop leaf image here</p>
+                <p class="upload-hint">or click to browse &mdash; PNG, JPG, JPEG supported</p>
+                <input type="file" id="fileInput" accept=".png,.jpg,.jpeg,.bmp,.webp" hidden/>
+            </div>
+
+            <div id="previewSection" class="preview-section hidden">
+                <img id="previewImg" src="" alt="Preview" class="preview-img"/>
+                <button id="clearBtn" class="btn btn-outline">✕ Clear</button>
+            </div>
+
+            <button id="analyzeBtn" class="btn btn-primary hidden">
+                <span id="btnText">🔍 Analyze Leaf</span>
+                <span id="btnSpinner" class="spinner hidden"></span>
+            </button>
+        </div>
+
+        <!-- Results -->
+        <div id="resultsSection" class="card results-card hidden">
+            <h2 class="section-title">Detection Results</h2>
+
+            <!-- Primary Result -->
+            <div id="primaryResult" class="result-primary"></div>
+
+            <!-- Top 3 Predictions -->
+            <h3 class="sub-title">Top 3 Predictions</h3>
+            <div id="predictionsList" class="predictions-list"></div>
+
+            <!-- Treatment Info -->
+            <div id="treatmentBox" class="treatment-box"></div>
+        </div>
+
+        <!-- About -->
+        <div id="about" class="card about-card">
+            <h2 class="section-title">About This System</h2>
+            <div class="about-grid">
+                <div class="about-item">
+                    <span class="about-icon">🧠</span>
+                    <h4>Deep Learning Model</h4>
+                    <p>MobileNetV2 fine-tuned on 87,000+ PlantVillage images achieving ~97% accuracy.</p>
+                </div>
+                <div class="about-item">
+                    <span class="about-icon">🌱</span>
+                    <h4>38 Disease Classes</h4>
+                    <p>Detects diseases across 14 plant species including Tomato, Corn, Grape, Apple and more.</p>
+                </div>
+                <div class="about-item">
+                    <span class="about-icon">💊</span>
+                    <h4>Treatment Advice</h4>
+                    <p>Provides actionable treatment recommendations and disease severity rating.</p>
+                </div>
+                <div class="about-item">
+                    <span class="about-icon">⚡</span>
+                    <h4>Fast & Local</h4>
+                    <p>Runs entirely on your machine — no internet required after setup. Results in under 2 seconds.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Plant Disease Detection System &mdash; Powered by MobileNetV2 &amp; TensorFlow</p>
+        <p class="footer-note">For research and educational use only. Consult an agronomist for critical decisions.</p>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
