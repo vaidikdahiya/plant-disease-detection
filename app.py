@@ -85,7 +85,7 @@ model = None
 
 def load_model():
     global model
-    model_path = 'model/plant_disease_model.h5'
+    model_path = 'model/plant_disease_model.keras'
     if os.path.exists(model_path):
         print(f"[INFO] Loading model from {model_path}")
         model = tf.keras.models.load_model(model_path)
